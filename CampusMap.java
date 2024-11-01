@@ -11,6 +11,7 @@ public class CampusMap {
 
     /**
      * Adds a Building to the map
+     * 
      * @param b the Building to add
      */
     public void addBuilding(Building b) {
@@ -21,6 +22,7 @@ public class CampusMap {
 
     /**
      * Removes a Building from the map
+     * 
      * @param b the Building to remove
      * @return the removed Building
      */
@@ -34,8 +36,9 @@ public class CampusMap {
     public String toString() {
         String mapString = "DIRECTORY of BUILDINGS";
 
-        for (int i = 0; i < this.buildings.size(); i ++) {
-            mapString += "\n  " + (i+1) + ". "+ this.buildings.get(i).getName() + " (" + this.buildings.get(i).getAddress() + ")";
+        for (int i = 0; i < this.buildings.size(); i++) {
+            mapString += "\n  " + (i + 1) + ". " + this.buildings.get(i).getName() + " ("
+                    + this.buildings.get(i).getAddress() + ")";
         }
         return mapString;
     }
@@ -44,7 +47,29 @@ public class CampusMap {
         CampusMap myMap = new CampusMap();
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4));
+
+        myMap.addBuilding(new House("Talbot House", false));
+        myMap.addBuilding(new House("Tyler House", "164 Green Street, Northampton, MA 01063", 4, true, false));
+        myMap.addBuilding(new House("Chapin House", true));
+
+        myMap.addBuilding(new Cafe("Campus Center Cafe"));
+        myMap.addBuilding(new Cafe());
+
+        myMap.addBuilding(new Library("Neilson Library"));
+        myMap.addBuilding(
+                new Library("Josten Performing Arts Library", "122 Green Street, Northampton, MA 01063", 2, false));
+        myMap.addBuilding(new Library());
+
+        myMap.addBuilding(new Building("10 Elm Street, Northampton, MA 01063"));
+        myMap.addBuilding(new Building("Seelye Hall", "3 Seelye Drive, Northampton, MA 01063"));
+        myMap.addBuilding(new Building("Alumnae Gymnasium", "83 Elm Street, Northampton, MA 01063", 3));
+        myMap.addBuilding(new Building("McConnell Hall", "30 Belmont Avenue, Northampton, MA 01063", 3));
+
         System.out.println(myMap);
+
+        myMap.buildings.get(3).enter();
+        myMap.buildings.get(3).goToFloor(4);
+        myMap.buildings.get(5).enter();
     }
-    
+
 }
