@@ -141,7 +141,7 @@ public class House extends Building {
   }
 
   public static void main(String[] args) {
-    House myHouse = new House("Tyler", "1 chapin way", 4, true);
+    House myHouse = new House("Tyler", "1 chapin way", 4, true, false);
     String ruby = new String("Ruby");
     myHouse.moveIn(ruby);
   }

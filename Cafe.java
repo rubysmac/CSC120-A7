@@ -32,6 +32,7 @@ public class Cafe extends Building {
     public Cafe() {
         super();
         this.name = "<Cafe Name Unknown>";
+        this.nFloors = 2;
     }
 
     /**
@@ -42,6 +43,13 @@ public class Cafe extends Building {
         this.name = name;
     }
 
+    /**
+     * Throws an exception if the person tries to move to inappropriate floor in
+     * cafe,
+     * overriding the superclass method
+     * 
+     * @param floorNum the number of the floor to which the person should go
+     */
     public void goToFloor(int floorNum) {
         if (this.activeFloor == -1) {
             throw new RuntimeException(
@@ -51,8 +59,7 @@ public class Cafe extends Building {
             throw new RuntimeException(
                     "Invalid floor number. Valid range for this Building is 1-" + this.nFloors + ".");
         }
-        System.out.println("You are now on floor #" + floorNum + " of " + this.name);
-        this.activeFloor = floorNum;
+        System.out.println("You cannot move to other floors in " + this.name + ". It is for employees only.");
     }
 
     /**

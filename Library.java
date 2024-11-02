@@ -22,7 +22,6 @@ public class Library extends Building {
     super(name, address, nFloors);
     this.hasElevator = elevator;
     this.collection = new Hashtable<String, Boolean>();
-    System.out.println("You have built a library: 📖");
   }
 
   /**
@@ -37,8 +36,10 @@ public class Library extends Building {
   /**
    * Overloaded Constructor with name only
    */
-  public Library(String name) {
+  public Library(String name, int floor) {
     this();
+    this.name = name;
+    this.nFloors = floor;
   }
 
   /**
@@ -72,7 +73,8 @@ public class Library extends Building {
     if (this.hasElevator == true || (this.activeFloor >= 1 && Math.abs(this.activeFloor - floorNum) == 1)) {
       super.goToFloor(floorNum);
     } else {
-      super.goToFloor(floorNum);
+      System.out.println("There is no elevator in " + this.name + ", so you cannot go to floor #" + floorNum
+          + " from floor #" + this.activeFloor);
     }
   }
 

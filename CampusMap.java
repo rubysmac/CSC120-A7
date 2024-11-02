@@ -55,7 +55,7 @@ public class CampusMap {
         myMap.addBuilding(new Cafe("Campus Center Cafe"));
         myMap.addBuilding(new Cafe());
 
-        myMap.addBuilding(new Library("Neilson Library"));
+        myMap.addBuilding(new Library("Neilson Library", 4));
         myMap.addBuilding(
                 new Library("Josten Performing Arts Library", "122 Green Street, Northampton, MA 01063", 2, false));
         myMap.addBuilding(new Library());
@@ -70,6 +70,9 @@ public class CampusMap {
         myMap.buildings.get(3).enter();
         myMap.buildings.get(3).goToFloor(4);
         myMap.buildings.get(5).enter();
+        myMap.buildings.get(5).goToFloor(2);
+        myMap.buildings.get(7).enter();
+        myMap.buildings.get(7).goToFloor(4);
     }
 
 }
