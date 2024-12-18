@@ -38,7 +38,10 @@ public class House extends Building {
   }
 
   /**
-   * Overloaded Constructor with name only
+   * Overloaded Constructor with name and boolean value of a dining presence
+   * 
+   * @param name   the name of the house
+   * @param dining true if this house has a dining, false otherwise
    */
   public House(String name, boolean dining) {
     this();
@@ -48,7 +51,7 @@ public class House extends Building {
 
   // Accessors
   /**
-   * Returns the boolean value if this house has a dining room
+   * Returns the
    * 
    * @return true if it has, false if it doesn't
    */

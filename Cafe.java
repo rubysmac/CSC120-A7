@@ -37,6 +37,8 @@ public class Cafe extends Building {
 
     /**
      * Overloaded Constructor with name only
+     * 
+     * @param name the name of cafe
      */
     public Cafe(String name) {
         this();
@@ -59,7 +61,7 @@ public class Cafe extends Building {
             throw new RuntimeException(
                     "Invalid floor number. Valid range for this Building is 1-" + this.nFloors + ".");
         }
-        System.out.println("You cannot move to other floors in " + this.name + ". It is for employees only.");
+        throw new RuntimeException("You cannot move to other floors in " + this.name + ". It is for employees only.");
     }
 
     /**
